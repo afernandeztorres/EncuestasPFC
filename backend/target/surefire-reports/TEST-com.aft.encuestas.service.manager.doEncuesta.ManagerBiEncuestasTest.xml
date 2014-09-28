@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.547" errors="0" skipped="0" tests="3" name="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest">
+<testsuite failures="0" time="0.282" errors="0" skipped="0" tests="3" name="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Archivos de programa\Java\jre7\bin"/>
-    <property name="java.vm.version" value="24.45-b08"/>
+    <property name="sun.boot.library.path" value="C:\Archivos de programa\Java\jdk1.7.0_13\jre\bin"/>
+    <property name="java.vm.version" value="23.7-b01"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -15,10 +15,10 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 3"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Documents and Settings\alberto.fernandez\Escritorio\PFC\RepoJPG\encuestas\backEndService"/>
-    <property name="java.runtime.version" value="1.7.0_45-b18"/>
+    <property name="user.dir" value="C:\Documents and Settings\alberto.fernandez\Escritorio\PFC\repoAFT\EncuestasPFC\backend"/>
+    <property name="java.runtime.version" value="1.7.0_13-b20"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Archivos de programa\Java\jre7\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\endorsed"/>
     <property name="os.arch" value="x86"/>
     <property name="java.io.tmpdir" value="C:\DOCUME~1\ALBERT~1.FER\CONFIG~1\Temp\"/>
     <property name="line.separator" value="
@@ -26,9 +26,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows XP"/>
-    <property name="classworlds.conf" value="C:\Documents and Settings\alberto.fernandez\Escritorio\PFC\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7574035908325776888.tmp"/>
+    <property name="classworlds.conf" value="C:\maven\apache-maven-3.2.3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Archivos de programa\Java\jre7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Archivos de programa/Java/jre7/bin/client;C:/Archivos de programa/Java/jre7/bin;C:/Archivos de programa/Java/jre7/lib/i386;D:\oracle\product\10.2.0\client_2\bin;D:\oracle\product\10.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Archivos de programa\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\ARCHIV~1\ULTRAE~1;C:\CamlLight\bin;C:\Archivos de programa\CVS Suite\CVSNT\;C:\maven\apache-maven-3.2.3\bin;C:\Archivos de programa\Java\jdk1.7.0_13\bin;C:\Archivos de programa\CVSNT\;C:\Archivos de programa\CVS Suite\CVSNT\;D:\eclipse;;."/>
+    <property name="java.library.path" value="C:\Archivos de programa\Java\jdk1.7.0_13\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;D:\oracle\product\10.2.0\client_2\bin;D:\oracle\product\10.2.0\client_1\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Archivos de programa\ATI Technologies\ATI.ACE\Core-Static;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\ARCHIV~1\ULTRAE~1;C:\CamlLight\bin;C:\Archivos de programa\CVS Suite\CVSNT\;C:\maven\apache-maven-3.2.3\bin;C:\Archivos de programa\Java\jdk1.7.0_13\bin;C:\Archivos de programa\nodejs\;C:\Archivos de programa\CVSNT\;C:\Archivos de programa\CVS Suite\CVSNT\;C:\Documents and Settings\alberto.fernandez\Datos de programa\npm;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
@@ -39,21 +39,20 @@
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="user.name" value="alberto.fernandez"/>
-    <property name="java.class.path" value="/D:/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.5.0.20140605-2032/jars/plexus-classworlds-2.5.1.jar"/>
-    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.class.path" value="C:\maven\apache-maven-3.2.3\boot\plexus-classworlds-2.5.1.jar"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="32"/>
-    <property name="java.home" value="C:\Archivos de programa\Java\jre7"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.home" value="C:\Archivos de programa\Java\jdk1.7.0_13\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="1.7.0_45"/>
-    <property name="java.ext.dirs" value="C:\Archivos de programa\Java\jre7\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Archivos de programa\Java\jre7\lib\resources.jar;C:\Archivos de programa\Java\jre7\lib\rt.jar;C:\Archivos de programa\Java\jre7\lib\sunrsasign.jar;C:\Archivos de programa\Java\jre7\lib\jsse.jar;C:\Archivos de programa\Java\jre7\lib\jce.jar;C:\Archivos de programa\Java\jre7\lib\charsets.jar;C:\Archivos de programa\Java\jre7\lib\jfr.jar;C:\Archivos de programa\Java\jre7\classes"/>
+    <property name="java.version" value="1.7.0_13"/>
+    <property name="java.ext.dirs" value="C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\resources.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\rt.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\sunrsasign.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\jsse.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\jce.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\charsets.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\lib\jfr.jar;C:\Archivos de programa\Java\jdk1.7.0_13\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Documents and Settings\alberto.fernandez\Escritorio\PFC\RepoJPG\encuestas\backEndService\EMBEDDED"/>
+    <property name="maven.home" value="C:\maven\apache-maven-3.2.3"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -61,7 +60,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="0.547" classname="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest" name="testAdd"/>
-  <testcase time="0" classname="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest" name="testDel"/>
+  <testcase time="0.282" classname="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest" name="testAdd"/>
   <testcase time="0" classname="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest" name="testFind"/>
+  <testcase time="0" classname="com.aft.encuestas.service.manager.doEncuesta.ManagerBiEncuestasTest" name="testDel"/>
 </testsuite>

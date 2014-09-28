@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.aft.encuestas.dao.core.MyDaoDefault;
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -16,7 +17,7 @@ import com.aft.encuestas.model.Respuesta;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.apache.log4j.Logger;
 
-public class EncuestasDaoImpl {
+public class EncuestasDaoImpl implements MyDaoDefault{
 
 		/**
 		 * DataSource
@@ -50,13 +51,13 @@ public class EncuestasDaoImpl {
 		    private static final String FIND_PREGUNTAS_QUERY = " select * from tbl_preguntas where id_Encuesta = ?";
 		    private static final String FIND_RESPUESTAS_QUERY = " SELECT res.*  FROM tbl_respuestas res WHERE  res.id_pregunta = ? and res.id_tbl_idioma = ?";
 		    
-		    
-		    
 		    private static final String UPDATE_CONTADOR_QUERY = "update tbl_respuestas set contador = contador + 1 where Id_Respuesta = ?";
 		  
 		    private static final String UPDATE_QUERY_RADIO = "UPDATE  tbl_respuestas set respuesta = ? where  id_Respuesta = ?";
 		    private static final String UPDATE_QUERY_PRE = "UPDATE tbl_preguntas set pregunta = ? where  id_Pregunta = ?";
-		    private static final String DELETE_PRE = "delete from tbl_encuesta where id_Encuesta = ?";
+		    private static final String DELETE_ENC = "delete from tbl_encuesta where id_Encuesta = ?";
+            private static final String DELETE_PRE = "delete from tbl_preguntas where id_Encuesta = ?";
+            private static final String DELETE_RES = "delete from tbl_respuestas where id_pregunta in (SELECT pre.id_pregunta FROM tbl_preguntas pre WHERE pre.id_encuesta =?)";
 		    
 		    private static final String INSERT_QUERY_ENC   = "insert into tbl_encuesta ( Id_Tbl_TipoEncuesta, nombreIdEncuesta, id_tbl_idioma, fechaCad) values ( ?, ?, (select id_idioma from tbl_idioma where tipo = ?), ?)";
 		    private static final String INSERT_QUERY_RADIO = "insert into tbl_respuestas (Id_Pregunta, Respuesta, id_tbl_idioma, contador) values ((select id_pregunta from tbl_preguntas where Pregunta = ? and id_idioma = (select id_idioma from tbl_idioma where tipo = ?)), ?, (select id_idioma from tbl_idioma where tipo = ?), 0)";
@@ -76,9 +77,9 @@ public class EncuestasDaoImpl {
 					    	
 			}
 		
-		
+
 		/**
-		 * M�todo que ejecuta la query de b�squeda
+		 * Método que ejecuta la query de búsqueda
 		 * 
 		 * @param filter
 		 */
@@ -87,14 +88,14 @@ public class EncuestasDaoImpl {
 				
 				List<Encuesta> result = null;
 					try {		
-						//00.Comprobamos la validez del datsource
+						    //00.Comprobamos la validez del datsource
 							if (ds == null)   this.connect();
 						
-						//01.Preparamos el entorno
+						    //01.Preparamos el entorno
 							QueryRunner qr = new QueryRunner(ds);
 							//ResultSetHandler<List<Encuesta>> rsh = new BeanListHandler<Encuesta>(Encuesta.class);
 							ResultSetHandler<List<Encuesta>> rsh = new BeanListHandler<Encuesta>(Encuesta.class);
-						//02.Lanzamos la query
+						    //02.Lanzamos la query
 							result = qr.query( FIND_ENCUESTA_QUERY , rsh , id, idioma);
 						
 					}finally {			    
@@ -442,11 +443,11 @@ public class EncuestasDaoImpl {
 		 * 
 		 * @param filter
 		 */
-			public int delete (String idPregunta)throws Exception{
+			public int delete (String encuesta)throws Exception{
 				
 				int result = 0;
 				QueryRunner qr = null;
-				
+
 					try
 					{	
 						//00.Comprobamos la validez del datsource
@@ -454,10 +455,13 @@ public class EncuestasDaoImpl {
 					
 						//01.Preparamos el entorno
 							qr = new QueryRunner( ds );
-						   
-						//02.Lanzamos el update	
-							result = qr.update( DELETE_PRE , idPregunta );
-					  	
+                        //03.Borramos las respuestas
+                            result = qr.update( DELETE_RES, encuesta );
+                        //04.Borramos las preguntas
+                            result = qr.update( DELETE_PRE , encuesta );
+						//05.Borramos la encuesta
+							result = qr.update( DELETE_ENC , encuesta );
+
 					}finally {			    
 					    try{
 					    	DbUtils.close(ds.getConnection()); 

@@ -27,7 +27,8 @@ public class ManagerBiEncuestasTest extends TestCase {
        List mockList = new ArrayList();
        mockList.add(new Encuesta());
 
-       Mockito.when(mbe.getDaoImpl().findEncuesta(Mockito.anyString(), Mockito.anyString())).thenReturn(mockList);
+       Mockito.when(mbe.getDaoImpl().findEncuesta(
+                Mockito.anyString(), Mockito.anyString())).thenReturn(mockList);
        encuesta =  mbe.find(new Encuesta());
 
        assertNotNull(encuesta);
